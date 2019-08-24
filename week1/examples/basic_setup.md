@@ -13,6 +13,13 @@ node -v
 npm -v
 ```
 
+## Install yarn
+
+```bash
+npm install -g yarn
+yarn -v
+```
+
 ## Basic local javaScript file
 
 Create a file called `hello.js` containing:
