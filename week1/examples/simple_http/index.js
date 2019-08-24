@@ -3,7 +3,7 @@ var http = require("http");
 //create a server object:
 function createServer() {
   http
-    .createServer(function(req, res) {
+    .createServer(function (req, res) {
       switch (req.url) {
         case "/hello":
           res.writeHead(200, { "Content-Type": "application/json" });

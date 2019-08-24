@@ -1,13 +1,13 @@
 {
-  "name": "simple_http",
+  "name": "import",
   "version": "1.0.0",
-  "description": "simple_http",
+  "description": "import",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "keywords": [
-    "simple_http"
+    "import"
   ],
   "author": "",
   "license": "ISC",
