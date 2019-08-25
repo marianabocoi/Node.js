@@ -60,12 +60,19 @@ npm install -s date-fns
 
 For Things you need during development such as unit test, minification or linting. It works the same as code dependencies but instead of `-s` you should use `--save-dev`
 
-Example: Adding a linter ([date-fns](https://date-fns.org/))
+Example: Adding a linter ([eslint rules](https://eslint.org/docs/rules/))
 
 ```bash
 npm install --save-dev eslint
 npx eslint --init
 ```
+
+Settings for init, select following:
+> How would you like to use ESLint? `To check syntax and find problems`  
+> What type of modules does your project use? `CommonJS (require/exports)`  
+> Which framework does your project use? `None of these`  
+> Where does your code run? `Node`  
+> What format do you want your config file to be in? `JSON`  
 
 Configure linter
 
