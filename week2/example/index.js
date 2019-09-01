@@ -16,5 +16,7 @@ fs.readFile('words.txt', 'utf8', function (err, data) {
   console.log('It worked!')
   // console.log(data)
   const wordsArray = data.split('\n')
-  console.log(wordsArray)
+  // console.log(wordsArray)
+  const firstFiveWords = wordsArray.splice(0, 5)
+  console.log(firstFiveWords)
 })
