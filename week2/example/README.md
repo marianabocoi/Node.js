@@ -6,7 +6,7 @@ We want to create a commandline app that does the following:
 
 - Takes your name and says hi
 - Chooses a random word from a file
-- Displays number of letters and allows you to guess
+- Displays the number of letters and allows you to guess
 - Tells you if leter exists in word and remembers letter
 - Tells you if you press same letter again
 - Remembers state and word until it is guessed for each person
