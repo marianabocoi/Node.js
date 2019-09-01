@@ -21,13 +21,17 @@ function readFile() {
 }
 
 function hello(name) {
-  console.log(`Hello, ${name}!`)
+  console.log(`Hello, ${name}!\nGuess the word.`)
   const randomNumber = getNumber()
-  console.log(randomNumber)
+
   readFile().then(data => {
     words = data.split(/\r?\n/);
-    console.log(words[randomNumber - 1])
+    const word = words[randomNumber - 1]
+    const wordPlaceholder = '_ '.repeat(word.length)
+    console.log(`${wordPlaceholder}(${randomNumber})`)
+
   }).catch(console.error);
+
 }
 
 const name = process.argv[2];
