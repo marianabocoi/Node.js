@@ -2,6 +2,18 @@
 // npm start Mariana
 
 const fs = require('fs');
+const readline = require('readline')
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  prompt: 'guess> '
+});
+
+rl.on('line', (line) => {
+  console.log(line);
+}).on('close', () => {
+  process.exit(0);
+});
 
 const DEFAULT_ENCODING = 'utf8';
 const STORE_FILE_NAME = 'words.txt';
@@ -20,7 +32,7 @@ function readFile() {
   );
 }
 
-function hello(name) {
+function hamgperson(name) {
   console.log(`Hello, ${name}!\nGuess the word.`)
   const randomNumber = getNumber()
 
@@ -29,11 +41,10 @@ function hello(name) {
     const word = words[randomNumber - 1]
     const wordPlaceholder = '_ '.repeat(word.length)
     console.log(`${wordPlaceholder}(${randomNumber})`)
-
+    rl.prompt();
   }).catch(console.error);
-
 }
 
 const name = process.argv[2];
 
-hello(name)
+hamgperson(name)

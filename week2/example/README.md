@@ -22,7 +22,7 @@ Create small steps and commmit when code is done for each step
 5. Take the random number and print the word from that line
 6. List only number of letters as: `_ _ _ _`
 7. Ask user for letter and print it then print word representation again
-8. Actually answer if the letter exists to the user
+8. Actually answer if the letter exists to the user (Optional: throw error if not single letter)
 9. Remember what letter user says and notify them if they said it before
 10. Update the printing to include the guessed letters
 11. Celebrate the user when they guessed all letters by printing Congratulations, you guessed `<word>`!!!
