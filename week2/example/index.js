@@ -3,20 +3,10 @@
 
 const fs = require('fs');
 const readline = require('readline')
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  prompt: 'guess> '
-});
-
-rl.on('line', (line) => {
-  console.log(line);
-}).on('close', () => {
-  process.exit(0);
-});
 
 const DEFAULT_ENCODING = 'utf8';
 const STORE_FILE_NAME = 'words.txt';
+let word
 
 function getNumber() {
   return Math.floor(Math.random() * 200) + 1
@@ -32,17 +22,29 @@ function readFile() {
   );
 }
 
-function hamgperson(name) {
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  prompt: 'guess> '
+});
+
+rl.on('line', (line) => {
+  console.log(line);
+  console.log(word);
+}).on('close', () => {
+  process.exit(0);
+});
+
+async function hamgperson(name) {
   console.log(`Hello, ${name}!\nGuess the word.`)
   const randomNumber = getNumber()
 
-  readFile().then(data => {
-    words = data.split(/\r?\n/);
-    const word = words[randomNumber - 1]
-    const wordPlaceholder = '_ '.repeat(word.length)
-    console.log(`${wordPlaceholder}(${randomNumber})`)
-    rl.prompt();
-  }).catch(console.error);
+  const data = await readFile()
+  const words = data.split(/\r?\n/)
+  word = words[randomNumber - 1]
+  const wordPlaceholder = '_ '.repeat(word.length)
+  console.log(`${wordPlaceholder}(${randomNumber})`)
+  rl.prompt();
 }
 
 const name = process.argv[2];
