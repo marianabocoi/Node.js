@@ -22,13 +22,12 @@ function readFile() {
 
 function hello(name) {
   console.log(`Hello, ${name}!`)
-  console.log(getNumber())
+  const randomNumber = getNumber()
+  console.log(randomNumber)
   readFile().then(data => {
     words = data.split(/\r?\n/);
-    for (let index = 0; index < 10; index++) {
-      console.log(words[index])
-    }
-  })
+    console.log(words[randomNumber - 1])
+  }).catch(console.error);
 }
 
 const name = process.argv[2];
